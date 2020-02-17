@@ -72,7 +72,7 @@ class RLAgent:
             return
         samples = [ self.memory_[i] for i in self.random_.choice(range(len(self.memory_)),samples)]
         for state,action,reward,next_state,terminal in samples :
-            #TODO VECTORIZE ?
+            reward = 0 if reward is None else reward
             qvals = self.predictStateActions(state)
             qval = qvals[action]
             if terminal:
