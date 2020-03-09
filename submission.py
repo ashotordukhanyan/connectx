@@ -273,8 +273,10 @@ if __name__ == "__main__":
 
     for generation in range(6,20):
         env.reset()
-        agent = RLAgent(env, epsilon=0.2, model_file=f"model_g{generation}.h5")
-        prevgen_agent = RLAgent(env,epsilon=0,model_file=f"model_g{generation-1}.h5")
+        #agent = RLAgent(env, epsilon=0.2, model_file=f"model_g{generation}.h5")
+        #prevgen_agent = RLAgent(env,epsilon=0,model_file=f"model_g{generation-1}.h5")
+        agent = RLAgent(env, epsilon=0.2)
+        prevgen_agent = RLAgent(env,epsilon=0)
 
         def prevgen_act(observation, configuration):
             return prevgen_agent.act(observation,configuration)

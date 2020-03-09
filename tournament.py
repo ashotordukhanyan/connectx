@@ -24,7 +24,7 @@ def gen_function(a: RLAgent) :
 tally = defaultdict(int)
 for i in range(100):
     env.reset()
-    steps = env.run(agents=[gen_function(agent2),gen_function(agent1)])
+    steps = env.run(agents=[gen_function(agent1),gen_function(agent2)])
     last_step = steps[-1]
     p1reward = last_step[0]['reward']
     p2reward = last_step[1]['reward']
